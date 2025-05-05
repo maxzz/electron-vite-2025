@@ -11,8 +11,13 @@ files:
   - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
 asarUnpack:
   - resources/**
+forceCodeSigning: false
 win:
   executableName: my-app
+  signtoolOptions:
+    sign: null
+    publisherName: 'Max Zakharzhevskiy'
+  verifyUpdateCodeSignature: false
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
